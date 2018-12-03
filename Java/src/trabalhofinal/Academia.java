@@ -1,62 +1,42 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package trabalhofinal;
 
-/**
- *
- * @author TayLima
- */
 public class Academia {
-    
-    private int horario;
-    private int sala;
-    private String modalidade;
-    
+
+	private String nome;
+	private String cnpj;
+
+	public Academia(String nome, String cnpj) {
+		super();
+		this.nome = nome;
+		this.cnpj = cnpj;
+	}
+
 	public Academia() {
 		super();
 	}
 
-	public Academia(int horario, int sala, String modalidade) {
-		super();
-		this.horario = horario;
-		this.sala = sala;
-		this.modalidade = modalidade;
+	public String getNome() {
+		return nome;
 	}
 
-	public int getHorario() {
-		return horario;
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 
-	public void setHorario(int horario) {
-		this.horario = horario;
+	public String getCnpj() {
+		return cnpj;
 	}
 
-	public int getSala() {
-		return sala;
-	}
-
-	public void setSala(int sala) {
-		this.sala = sala;
-	}
-
-	public String getModalidade() {
-		return modalidade;
-	}
-
-	public void setModalidade(String modalidade) {
-		this.modalidade = modalidade;
+	public void setCnpj(String cnpj) {
+		this.cnpj = cnpj;
 	}
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + horario;
-		result = prime * result + ((modalidade == null) ? 0 : modalidade.hashCode());
-		result = prime * result + sala;
+		result = prime * result + ((cnpj == null) ? 0 : cnpj.hashCode());
+		result = prime * result + ((nome == null) ? 0 : nome.hashCode());
 		return result;
 	}
 
@@ -69,26 +49,22 @@ public class Academia {
 		if (getClass() != obj.getClass())
 			return false;
 		Academia other = (Academia) obj;
-		if (horario != other.horario)
-			return false;
-		if (modalidade == null) {
-			if (other.modalidade != null)
+		if (cnpj == null) {
+			if (other.cnpj != null)
 				return false;
-		} else if (!modalidade.equals(other.modalidade))
+		} else if (!cnpj.equals(other.cnpj))
 			return false;
-		if (sala != other.sala)
+		if (nome == null) {
+			if (other.nome != null)
+				return false;
+		} else if (!nome.equals(other.nome))
 			return false;
 		return true;
 	}
 
 	@Override
 	public String toString() {
-		return "Academia [horario=" + horario + ", sala=" + sala + ", modalidade=" + modalidade + "]";
+		return "Academia [nome=" + nome + ", cnpj=" + cnpj + "]";
 	}
-	
-	
-    
-    
-    
-    
+
 }
