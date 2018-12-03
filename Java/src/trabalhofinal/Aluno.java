@@ -3,22 +3,24 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package projetofinal;
+package trabalhofinal;
+
+import java.util.Date;
 
 /**
  *
  * @author TayLima
  */
-public class Aluno extends Pessoa{
-    
-    private String matricula;
+public class Aluno extends Pessoa {
+
+	private String matricula;
 
 	public Aluno() {
 		super();
 	}
 
-	public Aluno(String matricula) {
-		super();
+	public Aluno(String nome, Date datanasc, String cpf, String telefone, String matricula) {
+		super(nome, datanasc, cpf, telefone);
 		this.matricula = matricula;
 	}
 
@@ -57,9 +59,9 @@ public class Aluno extends Pessoa{
 
 	@Override
 	public String toString() {
-		return "Aluno [matricula=" + matricula + "]";
+		return "Aluno [matricula=" + matricula + ", toString()=" + super.toString() + "]";
 	}
-    
-    
-    
+	
+	
+
 }

@@ -1,17 +1,19 @@
-package projetofinal;
+package trabalhofinal;
+
+import java.util.Date;
 
 public class Pessoa {
-	
+
 	private String nome;
-	private String datanasc;
+	private Date datanasc;
 	private String cpf;
-	private int telefone;
-	
+	private String telefone;
+
 	public Pessoa() {
 		super();
 	}
 
-	public Pessoa(String nome, String datanasc, String cpf, int telefone) {
+	public Pessoa(String nome, Date datanasc, String cpf, String telefone) {
 		super();
 		this.nome = nome;
 		this.datanasc = datanasc;
@@ -27,11 +29,11 @@ public class Pessoa {
 		this.nome = nome;
 	}
 
-	public String getDatanasc() {
+	public Date getDatanasc() {
 		return datanasc;
 	}
 
-	public void setDatanasc(String datanasc) {
+	public void setDatanasc(Date datanasc) {
 		this.datanasc = datanasc;
 	}
 
@@ -43,11 +45,11 @@ public class Pessoa {
 		this.cpf = cpf;
 	}
 
-	public int getTelefone() {
+	public String getTelefone() {
 		return telefone;
 	}
 
-	public void setTelefone(int telefone) {
+	public void setTelefone(String telefone) {
 		this.telefone = telefone;
 	}
 
@@ -58,7 +60,7 @@ public class Pessoa {
 		result = prime * result + ((cpf == null) ? 0 : cpf.hashCode());
 		result = prime * result + ((datanasc == null) ? 0 : datanasc.hashCode());
 		result = prime * result + ((nome == null) ? 0 : nome.hashCode());
-		result = prime * result + telefone;
+		result = prime * result + ((telefone == null) ? 0 : telefone.hashCode());
 		return result;
 	}
 
@@ -86,7 +88,10 @@ public class Pessoa {
 				return false;
 		} else if (!nome.equals(other.nome))
 			return false;
-		if (telefone != other.telefone)
+		if (telefone == null) {
+			if (other.telefone != null)
+				return false;
+		} else if (!telefone.equals(other.telefone))
 			return false;
 		return true;
 	}
@@ -95,9 +100,5 @@ public class Pessoa {
 	public String toString() {
 		return "Pessoa [nome=" + nome + ", datanasc=" + datanasc + ", cpf=" + cpf + ", telefone=" + telefone + "]";
 	}
-	
-	
-	
-	
-	
+
 }

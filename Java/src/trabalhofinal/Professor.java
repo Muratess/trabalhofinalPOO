@@ -1,39 +1,38 @@
-package projetofinal;
+package trabalhofinal;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+import java.util.Date;
 
-/**
- *
- * @author TayLima
- */
-public class Professor extends Pessoa{
-    
-    private String matricula;
-    private String modalidade;
+public class Professor extends Pessoa {
+
+	private String matricula;
+	private String modalidade;
+
+	public Professor(String nome, Date datanasc, String cpf, String telefone, String matricula, String modalidade) {
+		super(nome, datanasc, cpf, telefone);
+		this.matricula = matricula;
+		this.modalidade = modalidade;
+	}
+
 	public Professor() {
 		super();
 	}
-	public Professor(String matricula, String modalidade) {
-		super();
-		this.matricula = matricula;
-		this.modalidade = modalidade;
-	}
+
 	public String getMatricula() {
 		return matricula;
 	}
+
 	public void setMatricula(String matricula) {
 		this.matricula = matricula;
 	}
+
 	public String getModalidade() {
 		return modalidade;
 	}
+
 	public void setModalidade(String modalidade) {
 		this.modalidade = modalidade;
 	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -42,6 +41,7 @@ public class Professor extends Pessoa{
 		result = prime * result + ((modalidade == null) ? 0 : modalidade.hashCode());
 		return result;
 	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -63,10 +63,11 @@ public class Professor extends Pessoa{
 			return false;
 		return true;
 	}
+
 	@Override
 	public String toString() {
-		return "Professor [matricula=" + matricula + ", modalidade=" + modalidade + "]";
+		return "Professor [matricula=" + matricula + ", modalidade=" + modalidade + ", toString()=" + super.toString()
+				+ "]";
 	}
 
-    
 }
